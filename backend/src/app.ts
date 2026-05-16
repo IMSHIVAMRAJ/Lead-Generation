@@ -26,3 +26,6 @@ export const buildApp = () => {
 
   return app;
 };
+
+const app = buildApp();
+export default app;
