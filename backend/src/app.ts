@@ -11,7 +11,21 @@ export const buildApp = () => {
   const app = express();
 
   app.use(helmet());
-  app.use(cors({ origin: env.clientOrigin }));
+  const allowedOrigins = env.clientOrigin
+    ? env.clientOrigin.split(",").map((origin) => origin.trim())
+    : [];
+  const corsOptions: cors.CorsOptions = {
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.length === 0 || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    optionsSuccessStatus: 204
+  };
+  app.use(cors(corsOptions));
+  app.options("*", cors(corsOptions));
   app.use(express.json());
   app.use(morgan("dev"));
 
