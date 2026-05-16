@@ -1,5 +1,5 @@
-export type LeadStatus = "New" | "Contacted" | "Qualified" | "Lost";
-export type LeadSource = "Website" | "Instagram" | "Referral";
+export const leadStatuses = ["New", "Contacted", "Qualified", "Lost"] as const;
+export const leadSources = ["Website", "Instagram", "Referral"] as const;
 
-export const leadStatuses: LeadStatus[] = ["New", "Contacted", "Qualified", "Lost"];
-export const leadSources: LeadSource[] = ["Website", "Instagram", "Referral"];
+export type LeadStatus = (typeof leadStatuses)[number];
+export type LeadSource = (typeof leadSources)[number];

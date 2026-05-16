@@ -1,5 +1,5 @@
 import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
+import jwt, { type Secret, type SignOptions } from "jsonwebtoken";
 import { User } from "../models/User.js";
 import { env } from "../config/env.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
@@ -20,10 +20,11 @@ export const register = asyncHandler(async (req, res, next) => {
   const passwordHash = await bcrypt.hash(password, 10);
   const user = await User.create({ name, email, passwordHash, role: role ?? "sales" });
 
-  const token = jwt.sign({ role: user.role }, env.jwtSecret, {
+  const tokenOptions: SignOptions = {
     subject: user._id.toString(),
-    expiresIn: env.jwtExpiresIn
-  });
+    expiresIn: env.jwtExpiresIn as SignOptions["expiresIn"]
+  };
+  const token = jwt.sign({ role: user.role }, env.jwtSecret as Secret, tokenOptions);
 
   res.status(201).json({
     token,
@@ -43,10 +44,11 @@ export const login = asyncHandler(async (req, res, next) => {
     return next({ statusCode: 401, message: "Invalid credentials" });
   }
 
-  const token = jwt.sign({ role: user.role }, env.jwtSecret, {
+  const tokenOptions: SignOptions = {
     subject: user._id.toString(),
-    expiresIn: env.jwtExpiresIn
-  });
+    expiresIn: env.jwtExpiresIn as SignOptions["expiresIn"]
+  };
+  const token = jwt.sign({ role: user.role }, env.jwtSecret as Secret, tokenOptions);
 
   res.json({
     token,
