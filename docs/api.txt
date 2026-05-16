@@ -1,0 +1,15 @@
+Smart Leads Dashboard API
+
+Base URL: /api
+
+Auth
+- POST /auth/register
+- POST /auth/login
+
+Leads (requires Bearer token)
+- GET /leads
+- GET /leads/:id
+- POST /leads
+- PATCH /leads/:id
+- DELETE /leads/:id (admin)
+- GET /leads/export (admin, CSV)

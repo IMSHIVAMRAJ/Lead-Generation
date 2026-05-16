@@ -1,0 +1,26 @@
+Smart Leads Dashboard - Setup Instructions
+
+Prerequisites
+- Node.js 18+
+- MongoDB (local or cloud)
+
+Backend
+1) cd backend
+2) npm install
+3) copy .env.example to .env and set values
+4) npm run dev
+
+Frontend
+1) cd frontend
+2) npm install
+3) copy .env.example to .env and set VITE_API_URL
+4) npm run dev
+
+Docker (optional)
+1) copy root .env.example to .env and set values
+2) docker compose up --build
+
+Notes
+- Backend default: http://localhost:4000
+- Frontend default: http://localhost:5173
+- Use CLIENT_ORIGIN in backend .env to allow frontend origin
