@@ -11,9 +11,9 @@ export const Select = ({ label, className, children, ...props }: SelectProps) =>
       {label && <span>{label}</span>}
       <select
         className={clsx(
-          "rounded-xl border border-ink-200 bg-white px-3 py-2 text-ink-900",
+          "rounded-xl border border-ink-200 bg-white px-3 py-2 text-ink-900 placeholder-ink-400",
           "focus:outline-none focus:ring-2 focus:ring-accent-300",
-          "dark:border-ink-700 dark:bg-ink-900/70 dark:text-ink-100",
+          "dark:border-ink-700 dark:bg-ink-900/70 dark:text-ink-100 dark:placeholder-ink-400",
           "dark:focus:ring-accent-300/60",
           className
         )}

@@ -14,6 +14,7 @@
 
 body {
   font-family: "Manrope", system-ui, sans-serif;
+  color: #0f1429;
   background-image: radial-gradient(circle at 10% 20%, rgba(255, 179, 138, 0.25), transparent 45%),
     radial-gradient(circle at 90% 10%, rgba(53, 194, 159, 0.2), transparent 50%),
     linear-gradient(120deg, rgba(15, 20, 41, 0.06), rgba(15, 20, 41, 0));
@@ -21,10 +22,21 @@ body {
 }
 
 .dark body {
+  color: #f5f7fb;
   background-color: #0f1429;
   background-image: radial-gradient(circle at 12% 18%, rgba(53, 194, 159, 0.18), transparent 48%),
     radial-gradient(circle at 85% 15%, rgba(255, 126, 81, 0.2), transparent 52%),
     linear-gradient(120deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0));
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #7f88a8;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #c9d1ea;
 }
 
 .card {
