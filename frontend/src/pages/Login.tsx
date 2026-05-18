@@ -28,9 +28,9 @@ export const Login = () => {
 
   return (
     <div className="flex min-h-screen items-center justify-center px-6">
-      <div className="card w-full max-w-md p-8">
-        <h1 className="text-2xl font-bold text-ink-900 dark:text-ink-100">Welcome back</h1>
-        <p className="mt-2 text-sm text-ink-500 dark:text-ink-300">Log in to manage your lead pipeline.</p>
+      <div className="card w-full max-w-md p-8 text-ink-900 dark:text-ink-50">
+        <h1 className="text-2xl font-bold">Welcome back</h1>
+        <p className="mt-2 text-sm text-ink-500 dark:text-ink-200">Log in to manage your lead pipeline.</p>
         <form onSubmit={handleSubmit} className="mt-6 flex flex-col gap-4">
           <Input label="Email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
           <Input
@@ -45,8 +45,8 @@ export const Login = () => {
             {loading ? "Signing in..." : "Sign in"}
           </Button>
         </form>
-        <p className="mt-4 text-sm text-ink-600 dark:text-ink-300">
-          New here? <Link className="font-semibold text-ink-900 dark:text-ink-100" to="/register">Create account</Link>
+        <p className="mt-4 text-sm text-ink-600 dark:text-ink-200">
+          New here? <Link className="font-semibold text-ink-900 dark:text-ink-50" to="/register">Create account</Link>
         </p>
       </div>
     </div>
