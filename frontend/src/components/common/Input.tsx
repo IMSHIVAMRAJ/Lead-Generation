@@ -13,7 +13,7 @@ export const Input = ({ label, className, ...props }: InputProps) => {
         className={clsx(
           "rounded-xl border border-ink-200 bg-white px-3 py-2 text-ink-900 placeholder-ink-400",
           "focus:outline-none focus:ring-2 focus:ring-accent-300",
-          "dark:border-ink-700 dark:bg-ink-900/70 dark:text-ink-100 dark:placeholder-ink-400",
+          "dark:border-ink-600 dark:bg-ink-800 dark:text-ink-50 dark:placeholder-ink-400",
           "dark:focus:ring-accent-300/60",
           className
         )}

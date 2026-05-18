@@ -37,6 +37,15 @@ textarea::placeholder {
   color: #c9d1ea;
 }
 
+.dark input,
+.dark textarea,
+.dark select {
+  color: #f5f7fb;
+  background-color: #1a2138;
+  border-color: #3b456b;
+  caret-color: #f5f7fb;
+}
+
 .card {
   @apply rounded-2xl bg-white/80 backdrop-blur shadow-card border border-white/60;
 }
